@@ -78,14 +78,9 @@ const markup = images.map((image) => `<li class="gallery-item">
 
 const galleryList = document.querySelector("ul.gallery");
 galleryList.innerHTML = markup;
-const links = document.querySelectorAll(".gallery-link");
-links.forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-  });
-});
 
 galleryList.addEventListener("click", (event) => {
+  event.preventDefault();
     if (event.target.nodeName !== "IMG") {
         return;
     } else {
